@@ -1,0 +1,38 @@
+{
+  "name": "handson-clasp",
+  "version": "1.2.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint --fix src/**/*.ts",
+    "build:local": "rimraf dist && npm run lint && webpack && cpx src/appsscript.json dist",
+    "build": "npm run build:local && clasp push",
+    "deploy": "npm run build && clasp deploy",
+    "dev": "watch 'npm run build' src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elevenback/handson-clasp.git"
+  },
+  "author": "takanakahiko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elevenback/handson-clasp/issues"
+  },
+  "homepage": "https://github.com/elevenback/handson-clasp#readme",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "gas-webpack-plugin": "^0.3.0",
+    "rimraf": "^2.6.2",
+    "ts-loader": "^5.2.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3",
+    "watch": "^1.0.2",
+    "webpack": "^4.20.2",
+    "prettier": "^1.14.3",
+    "webpack-cli": "^3.1.2",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
+    "@types/google-apps-script": "^0.0.29"
+  }
+}
